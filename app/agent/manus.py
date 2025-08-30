@@ -13,6 +13,7 @@ from app.tool.browser_use_tool import BrowserUseTool
 from app.tool.mcp import MCPClients, MCPClientTool
 from app.tool.python_execute import PythonExecute
 from app.tool.str_replace_editor import StrReplaceEditor
+from app.tool.message_tools import DiscordWebhookTool, SlackWebhookTool, TelegramBotTool, ConsoleMessageTool, FileMessageTool
 
 
 class Manus(ToolCallAgent):
@@ -38,6 +39,11 @@ class Manus(ToolCallAgent):
             StrReplaceEditor(),
             AskHuman(),
             Terminate(),
+            DiscordWebhookTool(),
+            SlackWebhookTool(),
+            TelegramBotTool(),
+            ConsoleMessageTool(),
+            FileMessageTool(),
         )
     )
 
